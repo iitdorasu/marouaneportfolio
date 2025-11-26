@@ -1,0 +1,112 @@
+/* Couleurs globales */
+:root {
+    --bg: #111;
+    --text: #fff;
+    --card: #1a1a1a;
+    --accent: #78aaff;
+  }
+  
+  /* Mode clair */
+  .light-mode {
+    --bg: #f8f8f8;
+    --text: #111;
+    --card: #fff;
+    --accent: #0066ff;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.4s, color 0.4s;
+  }
+  
+  /* Bouton mode sombre */
+  #theme-toggle {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background: var(--card);
+    color: var(--text);
+    font-size: 20px;
+    transition: 0.3s;
+  }
+  #theme-toggle:hover {
+    scale: 1.1;
+  }
+  
+  /* Header */
+  header {
+    text-align: center;
+    padding: 100px 20px;
+    background: #00000040;
+    backdrop-filter: blur(6px);
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+  }
+  
+  /* Sections */
+  section {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    color: var(--accent);
+  }
+  
+  /* Cartes */
+  .card {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--accent);
+    transition: 0.4s;
+  }
+  .card:hover {
+    transform: translateX(10px);
+  }
+  
+  /* Lien STUDI */
+  .link {
+    color: var(--accent);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  /* Animations au scroll */
+  .fade-in, .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  .show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+  }
+  
+  
