@@ -1,59 +1,164 @@
+<!-- Sommaire Page (index.html) -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio – Marouane Boulahdit</title>
+  <title>Sommaire – Portfolio Marouane</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- BOUTON MODE SOMBRE -->
-  <button id="theme-toggle">🌙</button>
-
-  <header class="fade-in">
-    <h1>Marouane Boulahdit</h1>
-    <p class="subtitle">Web Designer</p>
+  <header class="header-sommaire">
+    <h1>Portfolio de Marouane Boulahdit</h1>
+    <p>Sommaire interactif</p>
   </header>
 
-  <section class="about fade-up">
-    <h2>Salut ! Moi c’est Marouane</h2>
-    <p>
-      Passionné par le design et la créativité, j’ai 20 ans et je suis étudiant en Web Design au sein de l’école 
-      <span id="studi-link" class="link">STUDI</span>.
-    </p>
-    <p>
-      En parallèle, je développe Ra7a, une marque de vêtements streetwear inspirée de l’Orient.
-    </p>
+  <section class="sommaire">
+    <a href="page1.html" class="sommaire-card">À propos de moi</a>
+    <a href="page2.html" class="sommaire-card">Mon parcours</a>
+    <a href="page3.html" class="sommaire-card">Ma marque Ra7a</a>
+    <a href="page4.html" class="sommaire-card">Mon école Studi</a>
   </section>
-
-  <section class="formation fade-up">
-    <h2>Mon parcours</h2>
-
-    <div class="card">
-      <h3>BUT MMI – IUT Angoulême</h3>
-      <p>Année 2023 – interrompue suite à une hospitalisation.</p>
-    </div>
-
-    <div class="card">
-      <h3>Formation STUDI – Web Design</h3>
-      <p>2024 - Présent — Graduate Web & Communication Visuelle.</p>
-    </div>
-
-  </section>
-
-  <section class="projects fade-up">
-    <h2>Ma marque : Ra7a</h2>
-    <p>
-      Je prépare une collection, gère le site web, le logo, les flyers et les vidéos.
-    </p>
-  </section>
-
-  <footer>
-    <p>© 2025 – Portfolio de Marouane Boulahdit</p>
-  </footer>
-
-  <script src="script.js"></script>
+<script>
+// Scroll Reveal Professionnel
+const reveals = document.querySelectorAll('.reveal, .img');
+function revealOnScroll(){
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 120){ el.classList.add('visible'); }
+  });
+}
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll();
+</script>
 </body>
 </html>
+
+<!-- Page 1 -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>À propos – Marouane</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <h2>Salut ! Moi c’est Marouane</h2>
+    <p>Passionné par le design et la créativité, j’ai 20 ans et je suis étudiant en Web Design au sein de l’école STUDI.</p>
+    <img src="img/about.jpg" class="img" />
+  </div>
+</body>
+</html>
+
+<!-- Page 2 -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parcours – Marouane</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <h2>Mon Parcours</h2>
+    <p>BUT MMI – IUT Angoulême (2023)</p>
+    <p>Formation STUDI – Graduate Web & Communication Visuelle (2024-2025)</p>
+    <img src="img/parcours.jpg" class="img" />
+  </div>
+</body>
+</html>
+
+<!-- Page 3 -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ra7a – Marque</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <h2>Ma marque : Ra7a</h2>
+    <p>Je prépare une collection inspirée de l’Orient, je crée site web, flyers, logos et vidéos publicitaires.</p>
+    <img src="img/ra7a.jpg" class="img" />
+  </div>
+</body>
+</html>
+
+<!-- Page 4 -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studi – Formation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <h2>Mon école : STUDI</h2>
+    <p>Formation reconnue, spécialisée dans le design et la création visuelle.</p>
+    <img src="img/studi.jpg" class="img" />
+  </div>
+</body>
+</html>
+
+<!-- style.css (à mettre dans un fichier séparé) -->
+<style>
+body {
+  margin: 0;
+  background: #111;
+  color: white;
+  font-family: Arial;
+}
+.header-sommaire {
+  text-align: center;
+  padding: 40px;
+}
+.sommaire {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+}
+.sommaire-card {
+  padding: 20px 30px;
+  background: #1a1a1a;
+  border-radius: 12px;
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: #80aaff;
+  transition: 0.3s;
+}
+.sommaire-card:hover {
+  transform: translateY(-8px);
+  background: #2a2a2a;
+}
+.page {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px;
+}
+.img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+/* --- Animations Scroll Pro --- */
+.reveal { opacity: 0; transform: translateY(40px); transition: 0.9s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* --- Transitions images pro --- */
+.img { opacity: 0; transform: scale(0.95); transition: 0.9s ease-out; }
+.img.visible { opacity: 1; transform: scale(1); }
+
+</style>
+
+
+
 
